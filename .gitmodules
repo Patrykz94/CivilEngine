@@ -1,0 +1,3 @@
+[submodule "CivilEngine/vendor/spdlog"]
+	path = CivilEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
