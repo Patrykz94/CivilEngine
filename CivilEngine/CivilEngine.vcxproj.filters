@@ -4,6 +4,9 @@
     <Filter Include="CivilEngine">
       <UniqueIdentifier>{B289E535-1E3F-5E2B-A733-580213E8542F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CivilEngine\Events">
+      <UniqueIdentifier>{56196D4E-42FD-2DA4-AB5D-28F797601826}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CivilEngine.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\CivilEngine\EntryPoint.h">
       <Filter>CivilEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CivilEngine\Events\ApplicationEvent.h">
+      <Filter>CivilEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CivilEngine\Events\Event.h">
+      <Filter>CivilEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CivilEngine\Events\KeyEvent.h">
+      <Filter>CivilEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CivilEngine\Events\MouseEvent.h">
+      <Filter>CivilEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\CivilEngine\Log.h">
       <Filter>CivilEngine</Filter>
