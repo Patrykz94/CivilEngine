@@ -18,6 +18,9 @@ project "CivilEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "cepch.h"
+	pchsource "CivilEngine/src/cepch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

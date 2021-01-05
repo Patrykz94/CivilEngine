@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Civil {
 
 	class CIVIL_API KeyEvent : public Event

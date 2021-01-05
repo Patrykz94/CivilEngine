@@ -1,9 +1,7 @@
 #pragma once
 
+#include "cepch.h"
 #include "CivilEngine/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Civil {
 

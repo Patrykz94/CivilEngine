@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Civil {
 
 	class CIVIL_API WindowResizeEvent : public Event
@@ -26,7 +24,7 @@ namespace Civil {
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	private:
-		float m_Width, m_Height;
+		unsigned int m_Width, m_Height;
 	};
 
 	class CIVIL_API WindowCloseEvent : public Event
