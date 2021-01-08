@@ -10,6 +10,14 @@ workspace "CivilEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "CivilEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "CivilEngine/vendor/Glad/include"
+
+include "CivilEngine/vendor/GLFW"
+include "CivilEngine/vendor/Glad"
+
 project "CivilEngine"
 	location "CivilEngine"
 	kind "SharedLib"
@@ -30,18 +38,28 @@ project "CivilEngine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+	}
+
+	links
+	{
+		"GLFW",
+		"Glad",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
 		{
 			"CE_PLATFORM_WINDOWS",
-			"CE_BUILD_DLL"
+			"CE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -88,7 +106,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
