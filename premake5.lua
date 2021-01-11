@@ -1,5 +1,6 @@
 workspace "CivilEngine"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -16,13 +17,17 @@ IncludeDir["GLFW"] = "CivilEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "CivilEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "CivilEngine/vendor/imgui"
 
-include "CivilEngine/vendor/GLFW"
-include "CivilEngine/vendor/Glad"
-include "CivilEngine/vendor/imgui"
+group "Dependencies"
+	include "CivilEngine/vendor/GLFW"
+	include "CivilEngine/vendor/Glad"
+	include "CivilEngine/vendor/imgui"
+
+group ""
 
 project "CivilEngine"
 	location "CivilEngine"
 	kind "SharedLib"
+	staticruntime "Off"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -56,7 +61,6 @@ project "CivilEngine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -68,24 +72,28 @@ project "CivilEngine"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
+	staticruntime "Off"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -110,7 +118,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -120,12 +127,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "CE_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CE_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "CE_DIST"
+		runtime "Release"
 		optimize "On"
