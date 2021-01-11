@@ -158,13 +158,17 @@
     <ClInclude Include="src\CivilEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\CivilEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\CivilEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\CivilEngine\Input.h" />
+    <ClInclude Include="src\CivilEngine\KeyCodes.h" />
     <ClInclude Include="src\CivilEngine\Layer.h" />
     <ClInclude Include="src\CivilEngine\LayerStack.h" />
     <ClInclude Include="src\CivilEngine\Log.h" />
+    <ClInclude Include="src\CivilEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\CivilEngine\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cepch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CivilEngine\Application.cpp" />
@@ -177,6 +181,7 @@
     <ClCompile Include="src\cepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
