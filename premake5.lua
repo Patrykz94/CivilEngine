@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "CivilEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "CivilEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "CivilEngine/vendor/imgui"
+IncludeDir["glm"] = "CivilEngine/vendor/glm"
 
 group "Dependencies"
 	include "CivilEngine/vendor/GLFW"
@@ -39,7 +40,9 @@ project "CivilEngine"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -48,7 +51,8 @@ project "CivilEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -108,7 +112,8 @@ project "Sandbox"
 	includedirs
 	{
 		"CivilEngine/vendor/spdlog/include",
-		"CivilEngine/src"
+		"CivilEngine/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links

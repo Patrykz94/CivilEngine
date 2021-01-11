@@ -7,3 +7,6 @@
 [submodule "CivilEngine/vendor/imgui"]
 	path = CivilEngine/vendor/imgui
 	url = https://github.com/Patrykz94/imgui.git
+[submodule "CivilEngine/vendor/glm"]
+	path = CivilEngine/vendor/glm
+	url = https://github.com/g-truc/glm.git
