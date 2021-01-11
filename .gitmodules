@@ -4,3 +4,6 @@
 [submodule "CivilEngine/vendor/GLFW"]
 	path = CivilEngine/vendor/GLFW
 	url = https://github.com/Patrykz94/glfw.git
+[submodule "CivilEngine/vendor/imgui"]
+	path = CivilEngine/vendor/imgui
+	url = https://github.com/Patrykz94/imgui.git
