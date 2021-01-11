@@ -1,5 +1,7 @@
 #include <CivilEngine.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Civil::Layer
 {
 public:
@@ -11,6 +13,13 @@ public:
 	{
 		if (Civil::Input::IsKeyPressed(CE_KEY_TAB))
 			CE_TRACE("Tab key is pressed!");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Civil::Event& event) override
@@ -25,7 +34,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Civil::ImGuiLayer());
 	}
 
 	~Sandbox()

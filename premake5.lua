@@ -113,6 +113,7 @@ project "Sandbox"
 	{
 		"CivilEngine/vendor/spdlog/include",
 		"CivilEngine/src",
+		"CivilEngine/vendor",
 		"%{IncludeDir.glm}"
 	}
 

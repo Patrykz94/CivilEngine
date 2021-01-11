@@ -165,7 +165,6 @@
     <ClInclude Include="src\CivilEngine\Log.h" />
     <ClInclude Include="src\CivilEngine\MouseButtonCodes.h" />
     <ClInclude Include="src\CivilEngine\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cepch.h" />
@@ -585,11 +584,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CivilEngine\Application.cpp" />
+    <ClCompile Include="src\CivilEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\CivilEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CivilEngine\Layer.cpp" />
     <ClCompile Include="src\CivilEngine\LayerStack.cpp" />
     <ClCompile Include="src\CivilEngine\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\cepch.cpp">

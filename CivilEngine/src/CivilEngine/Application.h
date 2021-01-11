@@ -7,6 +7,8 @@
 #include "CivilEngine/Events/Event.h"
 #include "CivilEngine/Events/ApplicationEvent.h"
 
+#include "CivilEngine/ImGui/ImGuiLayer.h"
+
 namespace Civil {
 
 	class CIVIL_API Application
@@ -28,6 +30,7 @@ namespace Civil {
 		bool OnWindowClosed(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
